@@ -1,0 +1,48 @@
+.container {
+	width: 750px;
+	height: 800px;
+	margin: 40px auto 0px auto;
+}
+.container .logoBlock{
+	display: inline-block;
+border: 2px solid black;
+text-align: center;
+padding-left: 124px;
+padding-right: 174px;
+}
+.logoBlock span{
+	font-size: 25px;
+	display: block;
+}
+.container .logoBlock .logo {
+	width: 300px;
+	height: 75px;
+}
+.container .happyFace {
+	width: 80px;
+	height: 80px;
+	border: 2px solid black;
+	padding: 10px 30px 10px 30px;
+}
+
+.inputContainer .inputTitle{
+	display: block;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.inputContainer{
+	border: 1px solid black;
+	padding: 20px
+}
+
+.inputContainer .inputRow input{
+	margin-right: 98px;
+	width: 129px;
+	height: 28px;
+}
+
+.outputContainer{
+	border: 1px solid black;
+	padding: 20px;
+}
