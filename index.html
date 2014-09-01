@@ -10,8 +10,9 @@
 <body>
 
 	<div class="container" ng-controller="madlibController">
-	<img class="happyFace" src="img/mad-lib-happy-face.png" alt="happy face">
+	
 	<div class="logoBlock">
+	<img class="happyFace" src="img/mad-lib-happy-face.png" alt="happy face">
 		<img class="logo" src="img/ng-mad-libs-logo.png" alt="">
 		<span>Automate This</span>
 	</div>
@@ -19,32 +20,32 @@
 	<div class="inputContainer">
 		<span class="inputTitle">Provide the following words:</span>
 		<div class="inputRow">
-			<input type="text" placeholder="Male Name" ng-model="maleName">
-			<input type="text" placeholder="Dirty Task" ng-model="dirtyTask">
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoCelebrity">
+			<input type="text" placeholder="Male Name" ng-model="data.maleName">
+			<input type="text" placeholder="Dirty Task" ng-model="data.dirtyTask">
+			<input type="text" placeholder="Obnoxious Celebrity" ng-model="data.obnoCelebrity">
 		</div>
 
 		<div class="inputRow">
-			<input type="text" placeholder="Job Title" ng-model="jobTitle">
-			<input type="text" placeholder="Celebrity" ng-model="celebrity">
-			<input type="text" placeholder="Adjective" ng-model="adjective">
+			<input type="text" placeholder="Job Title" ng-model="data.jobTitle">
+			<input type="text" placeholder="Celebrity" ng-model="data.celebrity">
+			<input type="text" placeholder="Adjective" ng-model="data.adjective">
 			
 		</div>
 
 		<div class="inputRow">
-			<input type="text" placeholder="Tedious Task" ng-model="tediousTask">
-			<input type="text" placeholder="Useless Skill" ng-model="uselessSkill">
-			<input type="text" placeholder="Huge Number" ng-model="hugeNumber">
+			<input type="text" placeholder="Tedious Task" ng-model="data.tediousTask">
+			<input type="text" placeholder="Useless Skill" ng-model="data.uselessSkill">
+			<input type="text" placeholder="Huge Number" ng-model="data.hugeNumber">
 		</div>
-		
+
 		
 	</div>
 
 	<div class="outputContainer">
 		<div class="outputText">
-			<p>{{maleName}} was a {{jobTitle}} who loved technology. Although he loved parts of his job , he absolutely hated {{tediousTask}} and {{dirtyTask}}. So {{maleName}}, met with his life mentor {{celebrity}} who told him to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}}, so he studied programming instead.</p>
+			<p>{{data.maleName}} was a {{data.jobTitle}} who loved technology. Although he loved parts of his job , he absolutely hated {{data.tediousTask}} and {{data.dirtyTask}}. So {{data.maleName}}, met with his life mentor {{data.celebrity}} who told him to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{data.uselessSkill}}, so he studied programming instead.</p>
 			<p>
-			What a great decision, with his new skills , {{maleName}} built a {{adjective}} robot named {{obnoCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.
+			What a great decision, with his new skills , {{data.maleName}} built a {{data.adjective}} robot named {{data.obnoCelebrity}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}} times faster.
 			</p>					
 		</div>
 		 
