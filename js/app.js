@@ -8,6 +8,31 @@ controller("madlibController", function($scope){
 					uselessSkill:'flying backwards',
 					obnoCelebrity:'Blasting Bob',
 					adjective:'fastest',
-					hugeNumber:'5674325'};
+					hugeNumber:5674};
+
+	
+	$scope.generated = false;
+
+	$scope.submit = function(){
+		
+		$scope.generated = true;
+		console.log("submit");
+	};
+
+	$scope.reset = function(){
+		$scope.data = {maleName: '', 
+				   jobTitle:'',
+				   tediousTask: '',
+				   dirtyTask: '',
+					celebrity:'',
+					uselessSkill:'',
+					obnoCelebrity:'',
+					adjective:'',
+					hugeNumber:''
+		};
+		$scope.generated = false;
+	};
+
+
 
 });

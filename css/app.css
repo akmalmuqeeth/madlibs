@@ -43,5 +43,19 @@ width: 746px;
 
 .outputContainer{
 	border: 1px solid black;
+	margin-top: 5px;
 	padding: 20px;
+}
+
+button {
+margin: 15px 0px 0px 0px;
+width: 165px;
+height: 30px;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid {
+  border: 1px solid black;
 }
