@@ -10,50 +10,54 @@
 <body>
 
 	<div class="container" ng-controller="madlibController">
-	<img class="happyFace" src="img/mad-lib-happy-face.png" alt="happy face">
+	
 	<div class="logoBlock">
+	<img class="happyFace" src="img/mad-lib-happy-face.png" alt="happy face">
 		<img class="logo" src="img/ng-mad-libs-logo.png" alt="">
 		<span>Automate This</span>
 	</div>
 
-	<div class="inputContainer">
+	<div class="inputContainer" ng-show="!generated">
 		<span class="inputTitle">Provide the following words:</span>
-		<div class="inputRow">
-			<input type="text" placeholder="Male Name" ng-model="maleName">
-			<input type="text" placeholder="Dirty Task" ng-model="dirtyTask">
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoCelebrity">
+		<form name="madlibs_form" novalidate ng-submit="submit()">
+			<div class="inputRow">
+			<input type="text" placeholder="Male Name" ng-model="data.maleName" required>
+			<input type="text" placeholder="Dirty Task" ng-model="data.dirtyTask" required>
+			<input type="text" placeholder="Obnoxious Celebrity" ng-model="data.obnoCelebrity" required>
 		</div>
 
 		<div class="inputRow">
-			<input type="text" placeholder="Job Title" ng-model="jobTitle">
-			<input type="text" placeholder="Celebrity" ng-model="celebrity">
-			<input type="text" placeholder="Adjective" ng-model="adjective">
+			<input type="text" placeholder="Job Title" ng-model="data.jobTitle" required>
+			<input type="text" placeholder="Celebrity" ng-model="data.celebrity" required>
+			<input type="text" placeholder="Adjective" ng-model="data.adjective" required>
 			
 		</div>
 
 		<div class="inputRow">
-			<input type="text" placeholder="Tedious Task" ng-model="tediousTask">
-			<input type="text" placeholder="Useless Skill" ng-model="uselessSkill">
-			<input type="text" placeholder="Huge Number" ng-model="hugeNumber">
+			<input type="text" placeholder="Tedious Task" ng-model="data.tediousTask" required>
+			<input type="text" placeholder="Useless Skill" ng-model="data.uselessSkill" required>
+			<input type="number" placeholder="Huge Number" ng-model="data.hugeNumber" required>
 		</div>
+
+		<!-- <input type="submit"> -->
+		<button type="submit" class="submitBtn" ng-disabled="madlibs_form.$invalid">Generate Madlibs</button>
+		</form>
+		
 		
 		
 	</div>
 
-	<div class="outputContainer">
+	<div class="outputContainer" ng-show="madlibs_form.$valid && generated">
 		<div class="outputText">
-			<p>{{maleName}} was a {{jobTitle}} who loved technology. Although he loved parts of his job , he absolutely hated {{tediousTask}} and {{dirtyTask}}. So {{maleName}}, met with his life mentor {{celebrity}} who told him to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}}, so he studied programming instead.</p>
+			<p>{{data.maleName}} was a {{data.jobTitle}} who loved technology. Although he loved parts of his job , he absolutely hated {{data.tediousTask}} and {{data.dirtyTask}}. So {{data.maleName}}, met with his life mentor {{data.celebrity}} who told him to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{data.uselessSkill}}, so he studied programming instead.</p>
 			<p>
-			What a great decision, with his new skills , {{maleName}} built a {{adjective}} robot named {{obnoCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.
+			What a great decision, with his new skills , {{data.maleName}} built a {{data.adjective}} robot named {{data.obnoCelebrity}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}} times faster.
 			</p>					
 		</div>
+		<button ng-click="reset()">Reset</button>
 		 
 	</div>
 	
-
-	
-
-	
-	</div>
+	</div> <!-- end of controller -->
 </body>
 </html>

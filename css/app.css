@@ -4,11 +4,11 @@
 	margin: 40px auto 0px auto;
 }
 .container .logoBlock{
-	display: inline-block;
+	
 border: 2px solid black;
 text-align: center;
-padding-left: 124px;
-padding-right: 174px;
+
+width: 746px;
 }
 .logoBlock span{
 	font-size: 25px;
@@ -21,8 +21,7 @@ padding-right: 174px;
 .container .happyFace {
 	width: 80px;
 	height: 80px;
-	border: 2px solid black;
-	padding: 10px 30px 10px 30px;
+	
 }
 
 .inputContainer .inputTitle{
@@ -44,5 +43,19 @@ padding-right: 174px;
 
 .outputContainer{
 	border: 1px solid black;
+	margin-top: 5px;
 	padding: 20px;
+}
+
+button {
+margin: 15px 0px 0px 0px;
+width: 165px;
+height: 30px;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid {
+  border: 1px solid black;
 }
