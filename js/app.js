@@ -1,38 +1,32 @@
 angular.module("madLibApp", ['ngAnimate']).
 controller("madlibController", function($scope){
-	$scope.data = {maleName: 'John', 
-				   jobTitle:'plumber',
-				   tediousTask: 'picking trash',
-				   dirtyTask: 'doing laundry',
-					celebrity:'David Beckham',
-					uselessSkill:'flying backwards',
-					obnoCelebrity:'Blasting Bob',
-					adjective:'fastest',
-					hugeNumber:5674};
-
 	
 	$scope.generated = false;
 
-	$scope.submit = function(){
-		
-		$scope.generated = true;
-		console.log("submit");
+	$scope.setupData = [
+	{id: 'maleName',placeholder: "Male Name", type: "text", data : 'Akmal'},
+	{id: 'dirtyTask',placeholder: "Dirty Task", type: "text", data :'doing laundry'},
+	{id: 'obnoCelebrity',placeholder: "Obnoxious Celebrity", type: "text", data :"blasting bob"},
+	{id: 'jobTitle',placeholder: "Job Title", type: "text", data : 'plumber'},
+	{id: 'tediousTask',placeholder: "Tedious Task", type: "text", data : 'picking trash'},
+	{id: 'celebrity',placeholder: "Celebrity", type: "text", data : 'David Beckham'},
+	{id: 'uselessSkill',placeholder: "Useless skill", type: "text", data : 'flying backwards'},
+	{id: 'adjective',placeholder: "Adjective", type: "text", data : 'fastest'},
+	{id: 'hugeNumber',placeholder: "Huge Number", type: "number", data : 5674}
+	];
+
+	$scope.find = function(q){
+		for (var i = 0, len = $scope.setupData.length; i < len; i++) {
+			if($scope.setupData[i].id == q){
+				return $scope.setupData[i].data;
+			}
+		}
 	};
 
 	$scope.reset = function(){
-		$scope.data = {maleName: '', 
-				   jobTitle:'',
-				   tediousTask: '',
-				   dirtyTask: '',
-					celebrity:'',
-					uselessSkill:'',
-					obnoCelebrity:'',
-					adjective:'',
-					hugeNumber:''
-		};
+		for (var i = 0, len = $scope.setupData.length; i < len; i++) {
+			$scope.setupData[i].data = '';
+		}
 		$scope.generated = false;
 	};
-
-
-
 });

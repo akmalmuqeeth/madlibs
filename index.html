@@ -20,39 +20,19 @@
 
 	<div class="inputContainer" ng-show="!generated">
 		<span class="inputTitle">Provide the following words:</span>
-		<form name="madlibs_form" novalidate ng-submit="submit()">
+		<form name="madlibs_form" novalidate ng-submit="generated = true">
 			<div class="inputRow">
-			<input type="text" placeholder="Male Name" ng-model="data.maleName" required>
-			<input type="text" placeholder="Dirty Task" ng-model="data.dirtyTask" required>
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="data.obnoCelebrity" required>
-		</div>
-
-		<div class="inputRow">
-			<input type="text" placeholder="Job Title" ng-model="data.jobTitle" required>
-			<input type="text" placeholder="Celebrity" ng-model="data.celebrity" required>
-			<input type="text" placeholder="Adjective" ng-model="data.adjective" required>
-			
-		</div>
-
-		<div class="inputRow">
-			<input type="text" placeholder="Tedious Task" ng-model="data.tediousTask" required>
-			<input type="text" placeholder="Useless Skill" ng-model="data.uselessSkill" required>
-			<input type="number" placeholder="Huge Number" ng-model="data.hugeNumber" required>
-		</div>
-
-		<!-- <input type="submit"> -->
-		<button type="submit" class="submitBtn" ng-disabled="madlibs_form.$invalid">Generate Madlibs</button>
+				<input ng-repeat="item in setupData" type="{{item.type}}" placeholder="{{item.placeholder}}" ng-model="item.data" required>
+			</div>
+			<button type="submit" class="submitBtn" ng-disabled="madlibs_form.$invalid">Generate Madlibs</button>
 		</form>
-		
-		
-		
 	</div>
 
 	<div class="outputContainer" ng-show="madlibs_form.$valid && generated">
 		<div class="outputText">
-			<p>{{data.maleName}} was a {{data.jobTitle}} who loved technology. Although he loved parts of his job , he absolutely hated {{data.tediousTask}} and {{data.dirtyTask}}. So {{data.maleName}}, met with his life mentor {{data.celebrity}} who told him to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{data.uselessSkill}}, so he studied programming instead.</p>
+			<p>{{find("maleName")}} was a {{find("jobTitle")}} who loved technology. Although he loved parts of his job , he absolutely hated {{find("tediousTask")}} and {{find("dirtyTask")}} . So {{find("maleName")}}, met with his life mentor {{find("celebrity")}} who told him to learn how to {{find("uselessSkill")}}  with Thinkful. Thinkful didn't offer a course on {{find("uselessSkill")}} , so he studied programming instead.</p>
 			<p>
-			What a great decision, with his new skills , {{data.maleName}} built a {{data.adjective}} robot named {{data.obnoCelebrity}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}} times faster.
+			What a great decision, with his new skills , {{find("maleName")}} built a {{find("adjective")}} robot named {{find("obnoCelebrity")}} that not only loved {{find("dirtyTask")}}  but did it {{find("hugeNumber")}} times faster.
 			</p>					
 		</div>
 		<button ng-click="reset()">Reset</button>
