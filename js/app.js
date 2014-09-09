@@ -1,4 +1,4 @@
-angular.module("madLibApp", []).
+angular.module("madLibApp", ['ngAnimate']).
 controller("madlibController", function($scope){
 	$scope.data = {maleName: 'John', 
 				   jobTitle:'plumber',
