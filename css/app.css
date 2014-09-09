@@ -32,8 +32,15 @@ width: 746px;
 
 .inputContainer{
 	border: 1px solid black;
-	padding: 20px
+	padding: 20px;
+	-webkit-transition:all linear 0.5s;
+  	transition:all linear 0.5s;
 }
+
+.inputContainer.ng-hide {
+  opacity:0;
+}
+
 
 .inputContainer .inputRow input{
 	margin-right: 98px;
@@ -45,6 +52,12 @@ width: 746px;
 	border: 1px solid black;
 	margin-top: 5px;
 	padding: 20px;
+	-webkit-transition:all linear 0.5s;
+  	transition:all linear 0.5s;
+}
+
+.outputContainer.ng-hide {
+  opacity:0;
 }
 
 button {
